@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilbert Curve Preloader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #preloader {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .dot {
+            fill: #0f0;
+            r: 2;
+        }
+        .line {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: draw 3s linear forwards;
+        }
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <svg id="hilbert-container" width="100vw" height="100vh" viewBox="0 0 100 100">
+            <path id="hilbert-path" class="line" fill="none" stroke="#0f0" stroke-width="1.5"/>
+            <circle class="dot">
+                <animateMotion repeatCount="1" dur="3s" fill="freeze">
+                    <mpath href="#hilbert-path"/>
+                </animateMotion>
+            </circle>
+        </svg>
+    </div>
+    <div id="content" style="display: none; text-align: center;">
+        <h1>Welcome to Ahouba</h1>
+        <p>Experience innovation and technology.</p>
+    </div>
+    <script>
+        function generateHilbertPath(order, size, startX, startY) {
+            const points = [];
+            
+            function hilbert(n, x0, y0, xi, xj, yi, yj) {
+                if (n <= 0) {
+                    points.push([x0 + (xi + yi) / 2, y0 + (xj + yj) / 2]);
+                } else {
+                    hilbert(n - 1, x0, y0, yi / 2, yj / 2, xi / 2, xj / 2);
+                    hilbert(n - 1, x0 + xi / 2, y0 + xj / 2, xi / 2, xj / 2, yi / 2, yj / 2);
+                    hilbert(n - 1, x0 + xi / 2 + yi / 2, y0 + xj / 2 + yj / 2, xi / 2, xj / 2, yi / 2, yj / 2);
+                    hilbert(n - 1, x0 + xi / 2 + yi, y0 + xj / 2 + yj, -yi / 2, -yj / 2, -xi / 2, -xj / 2);
+                }
+            }
+            
+            hilbert(order, startX, startY, size, 0, 0, size);
+            return "M " + points.map(p => p.join(" ")).join(" L ");
+        }
+        
+        let hilbertPathData = generateHilbertPath(5, 80, 10, 10);
+        let pathElement = document.getElementById("hilbert-path");
+        pathElement.setAttribute("d", hilbertPathData);
+        
+        setTimeout(function() {
+            document.getElementById("preloader").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }, 3000);
+    </script>
+</body>
+</html>

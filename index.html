@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahouba 25</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader Section -->
+    <div id="preloader">
+        <img src="images/loader.gif" alt="Loading...">
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <header>
+            <a href="index.html"><img src="images/AHOUBA_LOGO.svg" alt="Logo" id="logo"></a>
+            <div class="nav-title">
+                <h3>Ahouba 2.0</h3>
+            </div>
+            <nav id="navbar">
+                <a href="#">Sponsors</a>
+                <div class="dropdown">
+                    <a>Events</a>
+                    <div class="dropdown-menu">
+                        <a href="Event.html">Event 1</a>
+                        <a href="Event.html">Event 1</a>
+                        <a href="Event.html">Event 2</a>
+                        <a href="Event.html">Event 3</a>
+                        <a href="Event.html">Event 4</a>
+                        <a href="Event.html">Event 5</a>
+                        <a href="Event.html">Event 6</a>
+                        <a href="Event.html">Event 7</a>
+                        <a href="Event.html">Event 8</a>
+                        <a href="Event.html">Event 9</a>
+                        <a href="Event.html">Event 10</a>
+                        <a href="Event.html">Event 11</a>
+                        <a href="Event.html">Event 12</a>
+                        <a href="Event.html">Event 13</a>
+                    </div>
+                </div>
+                <a href="team.html">Team</a>
+                <a href="#">Gallery</a>
+                <div class="dropdown">
+                    <a href="#">Contact Us</a>
+                    <div class="dropdown-menu">
+                        <a href="#">A</a>
+                        <a href="#">B</a>
+                        <a href="#">C</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        </header>
+    </div>
+
+    <div class="parallax">
+        <div id="parallaxtxt">
+            <p id="txt">
+                <span class="large-text">GEAR <br>UP!</span><br>
+                <span class="short-text">ULTIMATE <br>TECH <br>EXTRAVAGANZA! <br>....<a href="#guest-heading" class="button">Go to Section</a></span>
+            </p>
+        </div>
+        <div class="parallaximg">
+            <img src="#" alt="">
+            <img src="images/robowebp2.png" alt="" id="robot">
+        </div>
+
+        <canvas id="networkCanvas"></canvas>
+    </div>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <!-- Repeat images for infinite scrolling -->
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+        </div>
+    </div>
+
+    <div class="tab content">
+        <h1 class="animation-show">AHOUBA</h1>
+        <img src="images/AHOUBA_LOGO.svg" alt="" class="animation-show">
+        <p class="animation-show">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis consectetur
+            debitis deleniti nulla iste libero modi ipsa porro minus numquam maiores non temporibus alias ullam unde,
+            illocommodi odio aspernatur?</p>
+        <button class="animation-show">LOGO</button>
+    </div>
+
+    <div class="tab library">
+        <div class="image-container animation-show" onclick="toggleOverlay(this)">
+            <img src="images/ae2cbe4c74a79df332455ab8fe742e7c (1).jpeg" alt="Image 1">
+            <div class="overlay">Details for Image 1</div>
+        </div>
+        <div class="image-container animation-show" onclick="toggleOverlay(this)">
+            <img src="images/AHOUBA.jpg" alt="Image 2">
+            <div class="overlay">Details for Image 2</div>
+        </div>
+        <div class="image-container animation-show" onclick="toggleOverlay(this)">
+            <img src="images/bg.jpg" alt="Image 3">
+            <div class="overlay">Details for Image 3</div>
+        </div>
+        <div class="image-container animation-show" onclick="toggleOverlay(this)">
+            <img src="images/AHOUBA4.png" alt="Image 4">
+            <div class="overlay">Details for Image 4</div>
+        </div>
+    </div>
+
+    <div class="part-2">
+        <div id="guest-heading">
+            <h1>Past Guests</h1>
+        </div>
+        <div class="guest-imagebox">
+            <img src="images/AHOUBA4.png" alt="guest-image">
+            <div class="text-box">
+                <p>...ABCD..</p>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </div>
+
+    <!-- Linking the JavaScript -->
+    <script src="function.js"></script>
+
+
+
+
+
+
+    <!---------------BACKGROUND SHAPES ANIMATION SCRIPT --------------------------------------------------------->
+    <script>
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        const particles = [];
+        const numParticles = 100;
+        const mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+
+        class Particle {
+            constructor(angle, radius, speed) {
+                this.angle = angle;
+                this.radius = radius;
+                this.speed = speed;
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+            }
+
+            update() {
+                this.angle += this.speed;
+                this.x = (canvas.width / 2 + this.radius * Math.cos(this.angle)) % canvas.width;
+                this.y = (canvas.height / 2 + this.radius * Math.sin(this.angle)) % canvas.height;
+
+                if (this.x < 0) this.x += canvas.width;
+                if (this.y < 0) this.y += canvas.height;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(0, 191, 255, 0.5)'; // Blue color
+                ctx.fill();
+            }
+        }
+
+        function initializeParticles() {
+            particles.length = 0;
+            for (let i = 0; i < numParticles; i++) {
+                const angle = Math.random() * 2 * Math.PI;
+                const radius = Math.random() * (canvas.height) + 100; // Increase the radius range for wider spread
+                const speed = (Math.random() - 0.5) * 0.02;
+                particles.push(new Particle(angle, radius, speed));
+            }
+        }
+
+        initializeParticles();
+
+        canvas.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Connect particles with translucent blue lines
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 70) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(0, 191, 255, ${1 - distance / 70})`; // Blue color
+                        ctx.stroke();
+                    }
+                }
+
+                // Connect particles to mouse pointer without showing the dot
+                const dxMouse = mouse.x - particles[i].x;
+                const dyMouse = mouse.y - particles[i].y;
+                const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+
+                if (distanceMouse < 100) {
+                    ctx.beginPath();
+                    ctx.moveTo(mouse.x, mouse.y);
+                    ctx.lineTo(particles[i].x, particles[i].y);
+                    ctx.strokeStyle = `rgba(0, 191, 255, ${1 - distanceMouse / 100})`; // Blue color
+                    ctx.stroke();
+
+                    const angleMouse = Math.atan2(dyMouse, dxMouse);
+                    const forceMouse = (100 - distanceMouse) / 100;
+                    particles[i].vx += Math.cos(angleMouse) * forceMouse * 0.2;
+                    particles[i].vy += Math.sin(angleMouse) * forceMouse * 0.2;
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+    
+
+    <!-- -------------------------------------------------------------------------------------------------------->
+</body>
+</html>

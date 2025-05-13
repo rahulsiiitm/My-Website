@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* Basic Styling */
+body {
+    background-color: rgba(30, 32, 35, 0.781);
+    font-family: Poppins, sans-serif;
+    color: aliceblue;
+    margin: 0;
+    padding: 0;
+    width:100%;
+}
+
+
+/* Logo Styling */
+#logo {
+    width: 70px;
+    height: 70px;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+/*-------- Preloader Styling --------------------------------------------------------------------------------*/
+#preloader {
+    background: black;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 1s ease, visibility 1s ease;
+    overflow: hidden;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*----------- Main Content Fade-In Effect -------------------------------------------------------------------*/
+.main-content {
+    opacity: 0;
+    transform: scale(2);
+    transition: opacity 1s ease, transform 1s ease;
+    z-index: 99;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+.main-content.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Header Styling */
+header {
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1px 15px;
+    background-color: rgba(255, 255, 255, 0);
+    color: aliceblue;
+    backdrop-filter: blur(5px);
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+}
+
+/* Navbar Styling */
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a,
+.dropdown a {
+    color: #bbb;
+    text-decoration: none;
+    padding: 10px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for links */
+nav a:hover,
+nav a:active {
+    color: #1b9bfd;
+    border-bottom-color: #1b9bfd;
+    transform: translateY(-3px);
+}
+
+/* Active link styling */
+nav a.active {
+    font-weight: bold;
+    color: #79c5ff;
+}
+
+/* Menu Icon Styling */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    padding: 4px;
+    border: 2px solid #247fce;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Dropdown Styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a {
+    color: #bbb;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease, transform 0.3s ease;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: aliceblue;
+    color: #41e3f8;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    padding: 5px;
+}
+
+/* Dropdown menu links */
+.dropdown-menu>a {
+    color: #34d8ea;
+    padding: 10px;
+    border-bottom: 2px solid #444;
+    font-size: 13px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Show the dropdown when hovering over the parent link */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Responsive Navbar Styling */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 72px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        background: linear-gradient(135deg, #141414, #444);
+        border-top: 1px solid #4d5ef5;
+    }
+
+    nav a,
+    .dropdown a {
+        padding: 15px;
+        border-bottom: 2px solid #444;
+        position: relative;
+    }
+
+    .menu-icon {
+        display: block;
+        color: #79c5ff;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+}
+
+.parallax{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    /* background-color: black; */
+    overflow: hidden;
+    position: relative; /* Ensure the container is the reference for absolute positioning */
+
+}
+
+#text {
+    position: absolute;
+    font-size: 5em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+}
+
+.parallax img{
+    height: 100vh;
+    width: 100vw;
+    left: -1px;
+    top: 0;
+    position: absolute; /* Allows precise positioning */
+    bottom: 0; /* Aligns the image to the bottom */
+    z-index: 1;
+}
+
+#robo{
+    width:auto;
+    height: 90vh;
+    justify-self: right;
+    align-self: flex-end;
+    right:-3%;
+}
+
+.content {
+    min-height: 50vh;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 99px;
+}
+
+.content img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.content p {
+    width: 700px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.content button {
+    background-color: #fd0003;
+    padding: 10px 50px;
+    border: 1px solid #591F1D;
+    color: #fff;
+    font-family: Poppins;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+/* Animation Styling */
+.animation-show {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.7s;
+}
+
+.active .animation-show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.animation-show:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+.animation-show:nth-child(3) {
+    transition-delay: 0.6s;
+}
+
+.animation-show:nth-child(4) {
+    transition-delay: 0.9s;
+}

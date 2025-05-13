@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahouba 25</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader Section -->
+    <div id="preloader">
+        <img src="images/loader.gif" alt="Loading...">
+    </div>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <header>
+            <a href="index.html"><img src="images/AHOUBA_LOGO.svg" alt="Logo" id="logo"></a>
+            <div class="nav-title">
+                <h3>Ahouba 2.0</h3>
+            </div>
+            <nav id="navbar">
+                <a href="#">Sponsors</a>
+                <div class="dropdown">
+                    <a>Events</a>
+                    <div class="dropdown-menu">
+                        <a href="Event.html">Event 1</a>
+                        <a href="Event.html">Event 2</a>
+                        <a href="Event.html">Event 3</a>
+                    </div>
+                </div>
+                <a href="team.html">Team</a>
+                <a href="#">Gallery</a>
+                <div class="dropdown">
+                    <a href="#">Contact Us</a>
+                    <div class="dropdown-menu">
+                        <a href="#">A</a>
+                        <a href="#">B</a>
+                        <a href="#">C</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        </header>
+
+        <!-- Added Visible Content for the Main Page -->
+        <div class="hero-section">
+            <h1>Welcome to Ahouba 2.0!</h1>
+            <p>Your ultimate tech extravaganza experience awaits. Join us for events, learn from the best, and become a part of something big.</p>
+            <a href="#events" class="cta-button">Explore Events</a>
+        </div>
+    </div>
+
+    <div class="parallax">
+        <div id="parallaxtxt">
+            <p id="txt">
+                <span class="large-text">GEAR <br>UP!</span><br>
+                <span class="short-text">ULTIMATE <br>TECH <br>EXTRAVAGANZA! <br>....<a href="#guest-heading" class="button">Go to Section</a></span>
+            </p>
+        </div>
+        <div class="parallaximg">
+            <img src="images/robowebp2.png" alt="" id="robot">
+        </div>
+
+        <canvas id="networkCanvas"></canvas>
+    </div>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <img src="images/AHOUBA_LOGO.svg" alt="Image 1">
+            <!-- Repeat images for infinite scrolling -->
+        </div>
+    </div>
+
+    <div class="tab content">
+        <h1 class="animation-show">AHOUBA</h1>
+        <img src="images/AHOUBA_LOGO.svg" alt="" class="animation-show">
+        <p class="animation-show">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <button class="animation-show">LOGO</button>
+    </div>
+
+    <!-- Other sections can go here -->
+
+    <!-- Linking the JavaScript -->
+    <script src="function.js"></script>
+</body>
+</html>
