@@ -23,11 +23,11 @@ A responsive and modern website designed for the annual Tech Fest organized by t
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/iiitm-tech-fest.git
+    git clone https://https://github.com/rahulsiiitm/My-Website.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd iiatm-tech-fest
+    cd My-Website
     ```
 3. Open the `index.html` file in your browser to view the website.
 
